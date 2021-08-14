@@ -3,20 +3,10 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PetDetailsScreen from './screens/PetDetailsScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
-
-// the navigation prop is passed to every screen component
-const HomeScreen = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text>Home Screen</Text>
-    <Button
-      title="Go To Details"
-      onPress={() => navigation.navigate('Details')}
-    />
-    <StatusBar style="auto" />
-  </View>
-);
 
 function DetailsScreen({ navigation }) {
   return (
@@ -39,6 +29,7 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="PetDetails" component={PetDetailsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
