@@ -6,8 +6,8 @@ export default function PetDetailsScreen({ navigation, route }) {
 
   return (
     <View style={styles.container}>
-      <Text>name: {pet.name}</Text>
-      <Text>type: {pet.type}</Text>
+      <Text>name: {pet?.name}</Text>
+      <Text>type: {pet?.type}</Text>
     </View>
   );
 }

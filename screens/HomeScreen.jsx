@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { PetsContext } from '../context/petsContext';
 
 // the navigation prop is passed to every screen component
 export default function HomeScreen({ navigation }) {
-  const PETS = [
-    {
-      name: 'jeffrey',
-      type: 'cat',
-    },
-    { name: 'doggy', type: 'dog' },
-  ];
+  const [pets] = useContext(PetsContext);
+  console.log({ pets });
 
   return (
     <View style={styles.container}>
@@ -19,7 +15,7 @@ export default function HomeScreen({ navigation }) {
         title="Go To Details"
         onPress={() => navigation.navigate('Details')}
       />
-      {PETS.map((pet, key) => (
+      {pets.map((pet, key) => (
         <React.Fragment key={key}>
           <Button
             title={`Go To ${pet.name} PAGE`}
