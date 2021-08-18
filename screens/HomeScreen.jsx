@@ -6,7 +6,6 @@ import { PetsContext } from '../context/petsContext';
 // the navigation prop is passed to every screen component
 export default function HomeScreen({ navigation }) {
   const [pets] = useContext(PetsContext);
-  console.log({ pets });
 
   return (
     <View style={styles.container}>
@@ -23,7 +22,6 @@ export default function HomeScreen({ navigation }) {
           />
         </React.Fragment>
       ))}
-      <StatusBar style="auto" />
     </View>
   );
 }

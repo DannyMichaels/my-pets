@@ -5,7 +5,7 @@ export default function PetDetailsScreen({ navigation, route }) {
   const { pet } = route.params;
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} id="PET_DETAILS">
       <Text>name: {pet?.name}</Text>
       <Text>type: {pet?.type}</Text>
     </View>

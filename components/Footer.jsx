@@ -5,6 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 import PetDetailsScreen from '../screens/PetDetailsScreen';
 import DetailsScreen from '../screens/DetailsScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { HomeScreenNavigator } from '../navigation/CustomNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +21,6 @@ export default function Footer() {
                 ? 'ios-information-circle'
                 : 'ios-information-circle-outline',
               Details: focused ? 'ios-list' : 'ios-list-outline',
-              PetDetails: null,
             };
 
             let iconName = ICONS[route.name];
@@ -38,9 +38,8 @@ export default function Footer() {
             fontWeight: 'bold',
           },
         })}>
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Home" component={HomeScreenNavigator} />
         <Tab.Screen name="Details" component={DetailsScreen} />
-        <Tab.Screen name="PetDetails" component={PetDetailsScreen} />
       </Tab.Navigator>
     </>
   );
