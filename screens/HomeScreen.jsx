@@ -19,11 +19,13 @@ export default function HomeScreen({ navigation }) {
         title="Go To Details"
         onPress={() => navigation.navigate('Details')}
       />
-      {PETS.map((pet) => (
-        <Button
-          title={`Go To ${pet.name} PAGE`}
-          onPress={() => navigation.navigate('PetDetails', { pet: pet })}
-        />
+      {PETS.map((pet, key) => (
+        <React.Fragment key={key}>
+          <Button
+            title={`Go To ${pet.name} PAGE`}
+            onPress={() => navigation.navigate('PetDetails', { pet: pet })}
+          />
+        </React.Fragment>
       ))}
       <StatusBar style="auto" />
     </View>
