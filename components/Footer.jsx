@@ -29,6 +29,14 @@ export default function Footer() {
           },
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'gray',
+          headerShown: route.name === 'PetDetails' ? false : true,
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: '#fff', // title
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
         })}>
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Details" component={DetailsScreen} />
